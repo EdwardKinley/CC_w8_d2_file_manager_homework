@@ -49,6 +49,8 @@ public class Runner {
         System.out.println(DBHelper.findById(File.class, 1));
         System.out.println(DBHelper.findById(Folder.class, 2));
 
+        System.out.println(DBHelper.findBySize(File.class, 2000, 5000));
+
         int intg = 0;
 
         System.exit(0);

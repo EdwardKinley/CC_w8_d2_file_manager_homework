@@ -7,6 +7,7 @@ import org.hibernate.Transaction;
 import org.hibernate.criterion.Property;
 import org.hibernate.criterion.Restrictions;
 import sun.print.AttributeClass;
+import sun.security.ssl.HandshakeInStream;
 
 import javax.management.Attribute;
 import java.util.List;
@@ -101,6 +102,21 @@ public class DBHelper {
             session.close();
         }
         return result;
+    }
+
+    public static <T> List<T> findBySize(Class classType, int lowerBound, int upperBound) {
+        session = HibernateUtil.getSessionFactory().openSession();
+        List<T> results = null;
+        try {
+            Criteria cr = session.createCriteria(classType);
+            cr.add(Restrictions.between("size", lowerBound, upperBound));
+            results = cr.list();
+        } catch (HibernateException e) {
+            e.printStackTrace();
+        } finally {
+            session.close();
+        }
+        return results;
     }
 
 }
