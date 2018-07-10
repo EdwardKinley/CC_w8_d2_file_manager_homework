@@ -29,6 +29,15 @@ public class Runner {
         DBHelper.save(file6);
         DBHelper.save(file7);
         DBHelper.save(file8);
+
+        System.out.println(DBHelper.getAll(File.class));
+        System.out.println(DBHelper.getAll(Folder.class));
+
+
+
+        int intg = 0;
+
+        System.exit(0);
     }
 
 }
