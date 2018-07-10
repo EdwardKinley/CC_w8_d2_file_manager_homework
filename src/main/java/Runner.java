@@ -1,3 +1,4 @@
+import db.DBFile;
 import db.DBHelper;
 import models.File;
 import models.Folder;
@@ -46,10 +47,13 @@ public class Runner {
 //        DBHelper.delete(file5);
 //        DBHelper.delete(folder2);
 
-        System.out.println(DBHelper.findById(File.class, 1));
-        System.out.println(DBHelper.findById(Folder.class, 2));
+        File file1byid = DBHelper.findById(File.class, 1);
+        Folder folder2byid = DBHelper.findById(Folder.class, 2);
 
-        System.out.println(DBHelper.findBySize(File.class, 2000, 5000));
+        List<File> filesbysize = DBFile.findBySize(2000, 5000);
+
+        List<File> folder1files = DBFile.getAllFilesInFolder(folder1);
+        List<File> folder2files = DBFile.getAllFilesInFolder(folder2);
 
         int intg = 0;
 
