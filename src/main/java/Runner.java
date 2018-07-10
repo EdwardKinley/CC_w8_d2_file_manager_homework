@@ -33,7 +33,10 @@ public class Runner {
         System.out.println(DBHelper.getAll(File.class));
         System.out.println(DBHelper.getAll(Folder.class));
 
-
+        file4.setname("our wedding photo");
+        DBHelper.update(file4);
+        folder2.setTitle("bank statements etc");
+        DBHelper.update(folder2);
 
         int intg = 0;
 
