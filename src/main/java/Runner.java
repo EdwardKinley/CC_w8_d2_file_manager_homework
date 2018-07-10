@@ -37,6 +37,14 @@ public class Runner {
         DBHelper.update(file4);
         folder2.setTitle("bank statements etc");
         DBHelper.update(folder2);
+        file3.setSize(4600);
+        DBHelper.update(file3);
+
+        DBHelper.delete(file8);
+        DBHelper.delete(file7);
+        DBHelper.delete(file6);
+        DBHelper.delete(file5);
+        DBHelper.delete(folder2);
 
         int intg = 0;
 
