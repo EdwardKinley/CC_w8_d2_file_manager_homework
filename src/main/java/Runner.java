@@ -40,11 +40,14 @@ public class Runner {
         file3.setSize(4600);
         DBHelper.update(file3);
 
-        DBHelper.delete(file8);
-        DBHelper.delete(file7);
-        DBHelper.delete(file6);
-        DBHelper.delete(file5);
-        DBHelper.delete(folder2);
+//        DBHelper.delete(file8);
+//        DBHelper.delete(file7);
+//        DBHelper.delete(file6);
+//        DBHelper.delete(file5);
+//        DBHelper.delete(folder2);
+
+        System.out.println(DBHelper.findById(File.class, 1));
+        System.out.println(DBHelper.findById(Folder.class, 2));
 
         int intg = 0;
 
